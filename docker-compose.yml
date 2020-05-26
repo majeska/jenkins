@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+
+  jenkins:
+    environment:
+      - JAVA_OPTS="-Djava.awt.headless=true"
+      - JENKINS_USER=${JENKINS_USER}
+      - JENKINS_PASS=${JENKINS_PASS}
+    build:
+      context: .
+      args:
+        version: ${VERSION}
+    image: majeska/jenkins:$VERSION-$BUILD
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+#      - /data/jenkins:/var/jenkins_home
+      - /Users/brian/data/jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
