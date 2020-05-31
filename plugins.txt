@@ -2,6 +2,7 @@ blueocean:latest
 credentials-binding:latest
 docker-workflow:latest
 git:latest
+greenballs:latest
 matrix-auth:latest
 slack:latest
 workflow-aggregator:latest

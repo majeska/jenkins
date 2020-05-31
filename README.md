@@ -1,6 +1,12 @@
 # Jenkins
 Jenkins Docker Build
 
+### Start
+docker-compose up -d
+
+### Stop
+docker-compose down
+
 ### Builds
 Manual Builds: Update .env with build number and/or jenkins tag to build from.
 Automated Builds: Your build machine export the following environment variables:
