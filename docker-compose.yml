@@ -10,7 +10,7 @@ services:
       context: .
       args:
         version: ${VERSION}
-    image: majeska/jenkins:$VERSION-$BUILD
+    image: majeska/jenkins-agent-dotnet:$VERSION-$BUILD
     ports:
       - "8080:8080"
       - "50000:50000"

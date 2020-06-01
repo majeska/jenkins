@@ -4,5 +4,6 @@ docker-workflow:latest
 git:latest
 greenballs:latest
 matrix-auth:latest
+mstest:latest
 slack:latest
 workflow-aggregator:latest
