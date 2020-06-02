@@ -1,11 +1,8 @@
 ARG version
 FROM jenkins/jenkins:$version
 
-# set initial default admin username and password
-COPY scripts/default-user.groovy /usr/share/jenkins/ref/init.groovy.d/
-
-# prevent jobs from running on the master
-#COPY scripts/executors.groovy /usr/share/jenkins/ref/init.groovy.d/
+# install groovy init scripts: default username:password and set executors on master
+COPY ./scripts/*.groovy /usr/share/jenkins/ref/init.groovy.d/
 
 # skip initial setup wizard
 RUN echo 2.0 > /usr/share/jenkins/ref/jenkins.install.UpgradeWizard.state
