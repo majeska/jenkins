@@ -1,6 +1,8 @@
 ARG version
 FROM jenkins/jenkins:$version
 
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community docker-cli
+
 # install groovy init scripts: default username:password and set executors on master
 COPY ./scripts/*.groovy /usr/share/jenkins/ref/init.groovy.d/
 
